@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="media.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Music and video players</title>
+</head>
+<body>
+
+  <h1>Плеєр з улюбленими піснями</h1>
+  <div class="music-container">
+    <div class="music-name">
+      <h4 id="title">Genesis</h4>
+      <div class="slide-container">
+        <input class="volume-style" type="range" min="0" max="100" value="50" id="volume" onchange="volume_change()">
+      </div>
+      <div class="progress-container">
+        <input class="progress" type="range" value="0" min="0" max="100" id="duration_slider" onchange="setProgress()">
+      </div>
+    </div>
+    <audio src="music/Genesis - In Too Deep.mp3" id="audio" autoplay></audio>
+    <div class="img-container">
+      <img src="img/Genesis - In Too Deep.jpg"  height="200" alt="music" id="cover">
+    </div>
+    <div class="navigation">
+      <button id="prev" class="button-action">
+        <i class="fas fa-backward"></i>
+      </button>
+      <button id="play" class="button-action button-action-bigger">
+        <i class="fas fa-play"></i>
+      </button>
+      <button id="next" class="button-action">
+        <i class="fas fa-forward"></i>
+      </button>
+    </div>
+  </div>
+  <h1 class="vvav">Відеоплеєр</h1>
+  <div>
+    <video id="videoplayer" poster ="img/kalush.jpg" loop controls muted>
+      <source src="video/Kalush.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+    </video>
+    <div class="video-playlist">
+      <button class="buttonv buttonv-info" onclick="play('video/Kalush.mp4','img/kalush.jpg')">Kalush Orchestra - Stefania Grand Final - Eurovision 2022</button>
+      <button class="buttonv buttonv-info" onclick="play('video/shortfilm.mp4','')">The Egyptian Pyramids - Funny Animated Short Film</button>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <script src="main.js"></script>
+</body>
+</html>
